@@ -7,7 +7,7 @@ import java.util.*;
 import java.io.*;
 
 public class checker {
-	static boolean[] canRow;
+	static boolean[] canCol;
 	static boolean[] leftDiag;
 	static boolean[] rightDiag;
 	static int[] answer;
@@ -21,10 +21,10 @@ public class checker {
 		out = new PrintWriter(new BufferedWriter(new FileWriter("checker.out")));
 		boardSize = in.nextInt();
 		in.close();
-		canRow = new boolean[boardSize];
+		canCol = new boolean[boardSize];
 		answer = new int[boardSize];
-		leftDiag = new boolean[26];
-		rightDiag = new boolean[26];
+		leftDiag = new boolean[boardSize * 2];
+		rightDiag = new boolean[boardSize * 2];
 		printTime = 0;
 		count = 0;
 		queenIt(0);
@@ -46,11 +46,11 @@ public class checker {
 			return;
 		}
 		for (int row = 0; row < boardSize; row++) {
-			if (!canRow[row] && !rightDiag[row + column] && !leftDiag[row - column + 13]) {
-				canRow[row] = rightDiag[row + column] = leftDiag[row - column + 13] = true;
+			if (!canCol[row] && !rightDiag[row + column] && !leftDiag[row - column + boardSize]) {
+				canCol[row] = rightDiag[row + column] = leftDiag[row - column + boardSize] = true;
 				answer[column] = row;
 				queenIt(column + 1);
-				canRow[row] = rightDiag[row + column] = leftDiag[row - column + 13] = false;
+				canCol[row] = rightDiag[row + column] = leftDiag[row - column + boardSize] = false;
 			}
 		}
 		return;
