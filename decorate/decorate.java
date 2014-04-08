@@ -6,7 +6,7 @@ PROG: decorate
 import java.util.*;
 import java.io.*;
 
-public class Decorate {
+public class decorate {
 	public static void main(String[] args) throws IOException {
 		long startTime = System.currentTimeMillis();
 		Scanner in = new Scanner(new FileReader("decorate.in"));

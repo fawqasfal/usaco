@@ -6,7 +6,7 @@ PROG: Fairphoto
 import java.util.*;
 import java.io.*;
 
-public class Fairphoto {
+public class fairphoto {
 	public static void main(String[] args) throws IOException {
 		long startTime = System.currentTimeMillis();
 		Scanner in = new Scanner(new FileReader("fairphoto.in"));

@@ -6,7 +6,7 @@ PROG: Odometer
 import java.util.*;
 import java.io.*;
 
-public class Odometer {
+public class odometer {
 	public static void main(String[] args) throws IOException {
 		long startTime = System.currentTimeMillis();
 		Scanner in = new Scanner(new FileReader("odometer.in"));
